@@ -13,10 +13,12 @@ public class DeserializeDemo {
             fileInputStream = new FileInputStream("C:\\Users\\Akinbobola Oluwaseyi\\Documents\\SerializedObject.txt");
             objectInputStream = new ObjectInputStream(fileInputStream);
 
-            //Writing the object
+            //reading object from specified file to obj
              obj = (Object) objectInputStream.readObject();
 
-
+             //Closing the two streams
+            objectInputStream.close();
+            fileInputStream.close();
 
         }
      catch (FileNotFoundException e) {
